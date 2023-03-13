@@ -1,0 +1,39 @@
+$primaryColor: #748433;
+.main{
+  width: 100%; height: 500px; 
+
+  .heading{
+    *{ color: $primaryColor;}
+    h2{
+      font-size: 30px; color: $primaryColor; text-align: center;
+      font-weight: 400;
+      b{
+        font-weight: 800;
+      }
+    }
+
+    p{
+      text-align: center; margin: 0; padding: 0;
+      span{
+        &:last-child{
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  .board{
+    min-height: 500px; width: 90%; gap: 10px; grid-template-columns: repeat(4, 1fr);
+    padding: 30px 5%; 
+  }
+}
+
+
+.stickyNote{
+  background: greenyellow; max-width: 300px; min-height: 260px; flex-direction: column; margin: 10px;
+  padding: 20px 20px; display: flex; align-items: center; justify-content: center; float: left;
+  p{
+    font-size: 60px; padding: 0; margin: 0;
+    color: #444;
+  }
+}
