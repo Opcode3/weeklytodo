@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '@/styles/Board.module.scss';
 import StickyNote from './stickynote';
+import Inputnote from './inputnote';
 
 export default function Board() {
 
@@ -28,6 +29,11 @@ export default function Board() {
             {
                 notes.map(note => <StickyNote key={note.id} data={note} />)
             }
+        </div>
+        <div className={styles.modal}>
+            <div>
+                <Inputnote />
+            </div>
         </div>
     </div>
   )

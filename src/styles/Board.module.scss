@@ -1,12 +1,14 @@
 $primaryColor: #748433;
+@import "./_mixin.scss";
 .main{
   width: 100%; height: 500px; 
 
   .heading{
+    margin-top: 20px; margin-bottom: 10px;
     *{ color: $primaryColor;}
     h2{
       font-size: 30px; color: $primaryColor; text-align: center;
-      font-weight: 400;
+      font-weight: 400; margin: 0;
       b{
         font-weight: 800;
       }
@@ -23,17 +25,53 @@ $primaryColor: #748433;
   }
 
   .board{
-    min-height: 500px; width: 90%; gap: 10px; grid-template-columns: repeat(4, 1fr);
-    padding: 30px 5%; 
+    width: 90%; display: grid; overflow: auto;
+    gap: 20px;
+    padding: 20px 5%; 
+    grid-template-columns: repeat(4, 1fr); 
+
+    @include bigTablet(){
+      grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+
+    @include tablet(){
+      grid-template-columns: repeat(2, 1fr); gap: 10px; 
+    }
+
+    @include mobile(){
+      grid-template-columns: repeat(1, 1fr); gap: 10px; 
+    }
+  }
+
+  .modal{
+    width: 100%; position: fixed; top: 0; left: 0;
+    background: rgba(#fff, 0.39); height: 100%;
+    display: none; justify-content: center; 
+    &>div{
+      width: 680px; background: white; margin: 10px 0;
+      height: fit-content; padding: 40px 20px;
+    }
   }
 }
 
 
 .stickyNote{
-  background: greenyellow; max-width: 300px; min-height: 260px; flex-direction: column; margin: 10px;
-  padding: 20px 20px; display: flex; align-items: center; justify-content: center; float: left;
+  background: rgba(44, 44, 44, 0.4); border-radius: 6px;
+  border: 2px solid rgb(20, 20, 20);
+  min-width: 250px; height: 250px;
+  padding: 20px 20px;
   p{
-    font-size: 60px; padding: 0; margin: 0;
+    font-size: 24px; padding: 0; margin: 0; font-weight: 400;
     color: #444;
+  }
+}
+
+.inputNote{
+  h3{
+    color: #333; margin: 0; margin-left: 3px;
+  }
+  textarea{
+    width: calc(100% - 32px); border: none; background: gray; outline: none; border-radius:8px;
+    padding: 16px;
   }
 }
