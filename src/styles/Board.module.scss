@@ -45,12 +45,30 @@ $primaryColor: #748433;
 
   .modal{
     width: 100%; position: fixed; top: 0; left: 0;
-    background: rgba(#fff, 0.39); height: 100%;
-    display: none; justify-content: center; 
+    background: rgba(#000, 0.39); height: 100%;
+    display: flex; justify-content: center;  user-select: none;
     &>div{
-      width: 680px; background: white; margin: 10px 0;
-      height: fit-content; padding: 40px 20px;
+      width: 520px; background: rgb(160, 160, 160); margin: 10px 0;
+      height: fit-content; padding: 0px 20px 15px 20px; border-radius: 4px;
+
+      .modalHeader{
+        display: flex; align-items: center; justify-content: space-between;
+        h2{
+          color: #444; font-weight: 700;
+        }
+        span{
+          width: 30px; height: 30px; border-radius: 20px;  background: rgba(#000, 0.39); cursor: pointer;
+          transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+          &:hover{
+            background: rgba(#000, 0.9);
+            color: gray;
+          }
+        }
+      }
     }
+
+    
   }
 }
 
@@ -62,16 +80,32 @@ $primaryColor: #748433;
   padding: 20px 20px;
   p{
     font-size: 24px; padding: 0; margin: 0; font-weight: 400;
-    color: #444;
+    color: rgb(209, 209, 209);
   }
 }
 
 .inputNote{
-  h3{
-    color: #333; margin: 0; margin-left: 3px;
-  }
   textarea{
     width: calc(100% - 32px); border: none; background: gray; outline: none; border-radius:8px;
     padding: 16px;
   }
+
+  .manageTask{
+    padding: 4px 0px;
+    display: flex; justify-content: space-between; align-items: center;
+    button{
+      border: none; padding: 10px 20px; border-radius: 4px; background: rgba(#333, 0.5);
+      color: #fff; transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
+
+      &:hover{
+        background: rgba(#333, 0.9);
+      }
+    }
+
+    label{
+      display: flex; align-items: center; justify-content: flex-start; width: fit-content;
+      p{margin: 0;  padding: 0;}
+    }
+  }
+  
 }
